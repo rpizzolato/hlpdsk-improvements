@@ -87,13 +87,23 @@ var problemsAndSolutions = {
       "solution": "Recolocado o toner/ Feito a troca"
     }
   ]
-}
+};
 
 function popUpSelectProblems() {
+  var tempArray = ["Problema 1", "Problema 2", "Problema 3"];
+
   var selectElement = document.createElement('select');
   selectElement.setAttribute('id', 'problemSelect');
   var node = document.getElementById('id_read_off_dthr_fim_atend_hora');
   node.appendChild(selectElement);
+
+  //options
+  for (var i = 0; i < tempArray.length; i++) {
+    var option = document.createElement('option');
+    option.value = tempArray[i];
+    option.text = tempArray[i];
+    selectElement.appendChild(option);
+  }
 }
 
 popUpSelectProblems();
