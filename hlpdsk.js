@@ -91,19 +91,19 @@ function addProbDetec(campo) {
 
 function popUpSelectProblems() {
   var tempArray = ["Problema 1", "Problema 2", "Problema 3"];
-
-  //selec
-  var selectElement = document.createElement('select');
-  selectElement.setAttribute('id', 'problemSelect');
   var node = document.getElementById('id_read_off_dthr_fim_atend_hora');
-  node.appendChild(selectElement);
+
+  //select
+  var selectList = document.createElement('select');
+  selectList.setAttribute('id', 'problemSelect');
+  node.appendChild(selectList);
 
   //options
   for (var i = 0; i < tempArray.length; i++) {
     var option = document.createElement('option');
     option.setAttribute('value', tempArray[i]);
     option.text = tempArray[i];
-    selectElement.appendChild(option);
+    selectList.appendChild(option);
   }
 }
 
