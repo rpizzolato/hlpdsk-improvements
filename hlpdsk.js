@@ -69,29 +69,30 @@ function addProbDetec(campo) {
   }
 }
 
-var problemsAndSolutions = {
-  "problem": [
-    {
-      "id": "1",
-      "problem": "Impressão falhando",
-      "solution": "Trocado fotocondutor"
-    },
-    {
-      "id": "2",
-      "problem": "Computador leno",
-      "solution": "Feio limpeza de arquivos temporários, desfragmentação, e limpeza e checagem de disco"
-    },
-    {
-      "id": "3",
-      "problem": "Toner não reconhece",
-      "solution": "Recolocado o toner/ Feito a troca"
-    }
-  ]
-};
+// var problemsAndSolutions = {
+//   "problem": [
+//     {
+//       "id": "1",
+//       "problem": "Impressão falhando",
+//       "solution": "Trocado fotocondutor"
+//     },
+//     {
+//       "id": "2",
+//       "problem": "Computador leno",
+//       "solution": "Feio limpeza de arquivos temporários, desfragmentação, e limpeza e checagem de disco"
+//     },
+//     {
+//       "id": "3",
+//       "problem": "Toner não reconhece",
+//       "solution": "Recolocado o toner/ Feito a troca"
+//     }
+//   ]
+// };
 
 function popUpSelectProblems() {
   var tempArray = ["Problema 1", "Problema 2", "Problema 3"];
 
+  //selec
   var selectElement = document.createElement('select');
   selectElement.setAttribute('id', 'problemSelect');
   var node = document.getElementById('id_read_off_dthr_fim_atend_hora');
@@ -100,7 +101,7 @@ function popUpSelectProblems() {
   //options
   for (var i = 0; i < tempArray.length; i++) {
     var option = document.createElement('option');
-    option.value = tempArray[i];
+    option.setAttribute('value', tempArray[i]);
     option.text = tempArray[i];
     selectElement.appendChild(option);
   }
