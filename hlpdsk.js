@@ -69,16 +69,34 @@ function addProbDetec(campo) {
   }
 }
 
-// function addButtonLimpar() {
-//   var btnLimpar = document.createElement('button');
+var problemsAndSolutions = {
+  problem [
+    {
+      "id": "1",
+      "problem": "Impressão falhando",
+      "solution": "Trocado fotocondutor"
+    },
+    {
+      "id": "2",
+      "problem": "Computador leno",
+      "solution": "Feio limpeza de arquivos temporários, desfragmentação, e limpeza e checagem de disco"
+    },
+    {
+      "id": "3",
+      "problem": "Toner não reconhece",
+      "solution": "Recolocado o toner/ Feito a troca"
+    }
+  ]
+}
 
-//   btnLimpar.setAttribute('type','button');
+function popUpSelectProblems() {
+  var selectElement = document.createElement('select');
+  selectElement.setAttribute('id', 'problemSelect');
+  var node = document.getElementById('id_read_off_dthr_fim_atend_hora');
+  node.appendChild(selectElement);
+}
 
-//   var node = document.getElementById('sc_b_sai_b');
-//   document.body.appendChild(button);
-// }
-
-// addButtonLimpar();
+popUpSelectProblems();
 
 addData('id_sc_field_dthr_inicio_atend');
 addData('id_sc_field_dthr_fim_atend');
