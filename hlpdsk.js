@@ -70,7 +70,7 @@ function addProbDetec(campo) {
 }
 
 var problemsAndSolutions = {
-  problem [
+  "problem": [
     {
       "id": "1",
       "problem": "Impressão falhando",
