@@ -90,21 +90,7 @@ function addProbDetec(campo) {
 // };
 
 function popUpSelectProblems() {
-  var tempArray = ["Problema 1", "Problema 2", "Problema 3"];
-  var node = document.getElementById('id_read_off_dthr_fim_atend_hora');
-
-  //select
-  var selectList = document.createElement('select');
-  selectList.setAttribute('id', 'problemSelect');
-  node.appendChild(selectList);
-
-  //options
-  for (var i = 0; i < tempArray.length; i++) {
-    var option = document.createElement('option');
-    option.setAttribute('value', tempArray[i]);
-    option.text = tempArray[i];
-    selectList.appendChild(option);
-  }
+alert('test');
 }
 
 popUpSelectProblems();
