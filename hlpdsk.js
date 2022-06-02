@@ -69,28 +69,22 @@ function addProbDetec(campo) {
   }
 }
 
-// var problemsAndSolutions = {
-//   "problem": [
-//     {
-//       "id": "1",
-//       "problem": "Impressão falhando",
-//       "solution": "Trocado fotocondutor"
-//     },
-//     {
-//       "id": "2",
-//       "problem": "Computador leno",
-//       "solution": "Feio limpeza de arquivos temporários, desfragmentação, e limpeza e checagem de disco"
-//     },
-//     {
-//       "id": "3",
-//       "problem": "Toner não reconhece",
-//       "solution": "Recolocado o toner/ Feito a troca"
-//     }
-//   ]
-// };
-
 function popUpSelectProblems() {
-alert('test');
+  var problemsArray = ["Problema 1", "Problema 2", "Problema 3"];
+  var node = document.getElementById('id_read_off_dthr_fim_atend_hora');
+
+  //select
+  var selectList = document.createElement('select');
+  selectList.setAttribute('id', 'problemSelect');
+  node.appendChild(selectList);
+
+  //options
+  for (var i = 0; i < problemsArray.length; i++) {
+    var option = document.createElement('option');
+    option.setAttribute('value', problemsArray[i]);
+    option.text = problemsArray[i];
+    selectList.appendChild(option);
+  }
 }
 
 popUpSelectProblems();
