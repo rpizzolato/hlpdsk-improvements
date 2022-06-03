@@ -1,4 +1,5 @@
 //https://chrome.google.com/webstore/detail/custom-javascript-for-web/ddbjnfjiigjmcpcpkmhogomapikjbjdk
+//code.jquery.com/jquery-3.5.0.min.js
 
 var dataini = document.getElementById('id_sc_field_dat_abert').value;
 var solic = document.getElementById('id_sc_field_usu_abr_cham').value;
@@ -70,24 +71,67 @@ function addProbDetec(campo) {
 }
 
 function popUpSelectProblems() {
-  var problemsArray = ["Problema 1", "Problema 2", "Problema 3"];
+  var problemsArray = 
+    ["-Escolha o problema-",
+    "Troca fotocondutor", 
+    "Troca toner", 
+    "PC Lento"
+  ];
+  
   var node = document.getElementById('id_read_off_dthr_fim_atend_hora');
+  var textareaFinal = document.getElementById('id_sc_field_serv_realiz_cham');
 
   //select
   var selectList = document.createElement('select');
   selectList.setAttribute('id', 'problemSelect');
+  selectList.setAttribute('class', 'sc-js-input scFormObjectOdd');
+  selectList.setAttribute('style', 'margin-left: 4px;');
   node.appendChild(selectList);
 
   //options
   for (var i = 0; i < problemsArray.length; i++) {
     var option = document.createElement('option');
-    option.setAttribute('value', problemsArray[i]);
+    option.setAttribute('value', i);
     option.text = problemsArray[i];
     selectList.appendChild(option);
   }
+
+  selectList.addEventListener('change', ()=>{
+    var choices = selectList.value;
+
+    switch (choices) {
+      case '0':
+        textareaFinal.value = "";
+        break;
+      case '1':
+        textareaFinal.value = "Trocado o fotocondutor"
+        break;
+      case '2':
+        textareaFinal.value = "Trocado o toner"
+        break;
+      case '3':
+        textareaFinal.value = "Limpeza nos arquivos temporários. Checagem e desfragmentação do disco rígido"
+        break;
+      default:
+        textareaFinal.value = "";
+        break;
+    }
+  })
 }
 
 popUpSelectProblems();
+
+//adjusts from hour
+document.getElementById("id_sc_field_dthr_fim_atend_hora").setAttribute("type", "time");
+//document.getElementById("calendar_dthr_inicio_atend").remove();
+//document.getElementById("calendar_dthr_fim_atend").remove();
+//document.getElementById("calendar_dat_entr").remove();
+
+//adjusts from Date
+//$('#id_sc_field_dthr_inicio_atend').datepicker();
+//$('#id_sc_field_dthr_fim_atend').datepicker();
+//$('#id_sc_field_dat_entr').datepicker();
+
 
 addData('id_sc_field_dthr_inicio_atend');
 addData('id_sc_field_dthr_fim_atend');
